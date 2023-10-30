@@ -1,0 +1,12 @@
+.mat-mdc-dialog-container {
+  background-color: var(--custom-app-background);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--custom-app-background);
+}
+
+
+.custom-modal-background {
+  background-color: var(--custom-app-background);
+}

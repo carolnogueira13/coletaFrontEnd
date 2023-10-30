@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --custom-app-primary: #688F4E;
+  --custom-app-background: #F4F1E9;
+  --custom-app-warn: #f44336;
+}
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

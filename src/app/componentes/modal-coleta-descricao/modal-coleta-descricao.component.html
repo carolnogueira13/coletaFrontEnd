@@ -1,0 +1,19 @@
+<h2 mat-dialog-title >Coleta X001</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Descrição da proposta</h3>
+  <ul>
+    <li>Nome do estabelecimento</li>
+    <li>Tipo de residuo</li>
+    <li>Peso aproximado</li>
+    <li>Quantidade</li>
+    <li>Valor</li>
+    <li>Tempo disponível para a coleta/ Tempo para desistir</li>
+  </ul>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button style="background-color: var(--custom-app-primary);" [mat-dialog-close]="true" (click)="onSubmit()">ACEITAR</button>
+  <button mat-raised-button style="background-color: var(--custom-app-primary);" [mat-dialog-close]="true" (click)="openDialog()">NEGOCIAR</button>
+  <button mat-raised-button mat-dialog-close>FECHAR</button>
+</mat-dialog-actions>
+

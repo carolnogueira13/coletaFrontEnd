@@ -1,0 +1,17 @@
+<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+<h2 mat-dialog-title>Deseja negociar o que?</h2>
+<button mat-raised-button><mat-icon>send</mat-icon>NEGOCIAR VIA CHAT</button>
+<mat-dialog-content class="mat-typography">
+  <button mat-raised-button><mat-icon>attach_money</mat-icon>VALOR</button>
+  <button mat-raised-button><mat-icon>calendar_today</mat-icon>DATA</button>
+  <button mat-raised-button><mat-icon>query_builder</mat-icon>HORÁRIO</button>
+  <div>
+    <label for="mensagem">Mensagem adicional:</label>
+    <textarea id="mensagem" name="mensagem" rows="10" cols="50"> </textarea>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button style="background-color: var(--custom-app-primary);" [mat-dialog-close]="true" (click)="onSubmit()">ENVIAR<mat-icon>send</mat-icon></button>
+  <button mat-raised-button mat-dialog-close>FECHAR</button>
+</mat-dialog-actions>
