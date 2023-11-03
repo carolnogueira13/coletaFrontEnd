@@ -5,17 +5,26 @@
 
 
 <mat-dialog-content class="mat-typography">
-  <button mat-raised-button (click)=" onClickVersion1()"><mat-icon>attach_money</mat-icon>{{ (inputValue$ | async) || 'VALOR' }}</button>
+  <button mat-raised-button (click)="modalValor()"><mat-icon>attach_money</mat-icon>{{ (inputValue$ | async) || 'VALOR' }}</button>
 
-  <button mat-raised-button (click)=" onClickVersion2()"><mat-icon>calendar_today</mat-icon>
+  <button mat-raised-button (click)="modalData()"><mat-icon>calendar_today</mat-icon>
     <ng-container *ngIf="(diasDaSemana$ | async) as diasDaSemana; else dataPlaceholder">
       <ng-container *ngIf="diasDaSemana.length > 0; else dataPlaceholder">{{ diasDaSemana }}</ng-container>
     </ng-container>
     <ng-template #dataPlaceholder>DATA</ng-template>
   </button>
 
-  <button mat-raised-button (click)=" onClickVersion3()"><mat-icon>query_builder</mat-icon>HORÁRIO</button>
-  
+  <button mat-raised-button (click)="modalHorario()"><mat-icon>query_builder</mat-icon>
+    <ng-container *ngIf="(horario$ | async) as horario; else horarioPlaceholder">
+      <ng-container *ngIf="horario.length > 0; else horarioPlaceholder">
+        <ng-container *ngFor="let termo of horario; let last = last">
+          {{ termo }}:00<ng-container *ngIf="!last"> / </ng-container>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+    <ng-template #horarioPlaceholder>HORARIO</ng-template>
+  </button>
+
   <div>
     <label for="mensagem">Mensagem adicional:</label>
     <textarea id="mensagem" name="mensagem" rows="10" cols="50"> </textarea>
@@ -23,6 +32,6 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="center">
-  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="onSubmit()" (click)="limpar()">ENVIAR<mat-icon>send</mat-icon></button>
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="enviar()" (click)="limpar()">ENVIAR<mat-icon>send</mat-icon></button>
   <button mat-raised-button mat-dialog-close (click)="limpar()">FECHAR</button>
 </mat-dialog-actions>

@@ -1,15 +1,22 @@
-<mat-dialog-content class="mat-typography">
-  <ng-container *ngIf="data.showModalVersion === 'version1'">
+<ng-container *ngIf="data.versaoModal === 'valor'">
+  <mat-dialog-content class="mat-typography">
+    <h3>Escolha o valor que deseja</h3>
     <form class="example-form">
       <mat-form-field class="example-full-width">
         <mat-label>Valor</mat-label>
-        <input matInput [(ngModel)]="inputValue" name="inputName" (input)="onInputChange()">
+        <input matInput [(ngModel)]="inputValue" name="inputName" (input)="mudancaNoInputValor()">
       </mat-form-field>
     </form>
-  </ng-container>
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-raised-button class="botao" [mat-dialog-close]="true">OK</button>
+    <button mat-raised-button mat-dialog-close (click)="limpar()">LIMPAR</button>
+  </mat-dialog-actions>
+</ng-container>
 
-  <ng-container *ngIf="data.showModalVersion === 'version2'">
-    <h2>Escolha o dia disponível</h2>
+<ng-container *ngIf="data.versaoModal === 'data'">
+  <mat-dialog-content>
+    <h3>Escolha o dia disponível</h3>
     <!-- <button mat-raised-button *ngFor="let diaDaSemana of diasDaSemana" multiple>{{ diaDaSemana }}</button> -->
     <mat-button-toggle-group name="diasDaSemana" multiple [(ngModel)]="diasDaSemana">
       <mat-button-toggle value="Seg">SEG</mat-button-toggle>
@@ -23,26 +30,29 @@
     <div>
       Valores selecionados: {{diasDaSemana}}
     </div>
-  </ng-container>
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="enviarDatasSelecionadas()">OK</button>
+    <button mat-raised-button mat-dialog-close (click)="limpar2()">LIMPAR</button>
+  </mat-dialog-actions>
+</ng-container>
 
-  <ng-container *ngIf="data.showModalVersion === 'version3'">
-    <h2>Escolha o horário disponível</h2>
+<ng-container *ngIf="data.versaoModal === 'horario'">
+  <mat-dialog-content>
+    <h3>Escolha o horário disponível</h3>
     <div style="text-align: center;">
       <mat-slider min="8" max="22" class="slider">
-        <input value="8" matSliderStartThumb [(value)]="valorSelecionado">
-        <input value="22" matSliderEndThumb [(value)]="valorSelecionado2">
+        <input matSliderStartThumb [(value)]="inicio">
+        <input matSliderEndThumb [(value)]="final">
       </mat-slider>
-      <div>
-        <span>De: {{ valorSelecionado }}:00</span>
-      </div>
-      <div>
-        <span>Até: {{ valorSelecionado2 }}:00 </span>
-      </div>
+      <p>De: {{ inicio }}:00</p>
+      <p>Até: {{ final }}:00 </p>
     </div>
-  </ng-container>
-</mat-dialog-content>
+  </mat-dialog-content>
+  <mat-dialog-actions align="center">
+    <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="enviarHorarioSelecionado()">OK</button>
+    <button mat-raised-button mat-dialog-close (click)="limpar3()">LIMPAR</button>
+  </mat-dialog-actions>
+</ng-container>
 
-<mat-dialog-actions align="center">
-  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="enviarDatasSelecionadas()">OK</button>
-  <button mat-raised-button mat-dialog-close (click)="limpar()">LIMPAR</button>
-</mat-dialog-actions>
+
