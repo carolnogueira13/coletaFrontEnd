@@ -1,0 +1,19 @@
+.botao{
+  color: var(--custom-app-background) !important;
+  background-color: var(--custom-app-primary);
+}
+
+.slider {
+  width: 80%;
+  margin: 0 auto;
+  color: var(--custom-app-primary) !important;
+}
+
+.mat-slider-thumb {
+  background-color: var(--custom-app-primary) !important;
+}
+
+
+
+
+

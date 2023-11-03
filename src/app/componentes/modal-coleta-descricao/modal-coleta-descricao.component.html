@@ -1,19 +1,60 @@
-<h2 mat-dialog-title >Coleta X001</h2>
-<mat-dialog-content class="mat-typography">
-  <h3>Descrição da proposta</h3>
-  <ul>
-    <li>Nome do estabelecimento</li>
-    <li>Tipo de residuo</li>
-    <li>Peso aproximado</li>
-    <li>Quantidade</li>
-    <li>Valor</li>
-    <li>Tempo disponível para a coleta/ Tempo para desistir</li>
-  </ul>
+<!-- <h2 mat-dialog-title><mat-icon>room</mat-icon>Coleta X001</h2> -->
+<!-- <mat-dialog-content class="mat-typography">
+  <div style="display: flex;">
+    <div>
+      <h3>Descrição da proposta</h3>
+      <ul>
+        <li>Nome do estabelecimento</li>
+        <li>Tipo de residuo</li>
+        <li>Peso aproximado</li>
+        <li>Quantidade</li>
+        <li>Valor</li>
+        <li>Tempo disponível para a coleta/ Tempo para desistir</li>
+      </ul>
+    </div>
+    <div class="imagem">
+      <img src="../../../assets/imagens/pawel-czerwinski-RkIsyD_AVvc-unsplash.jpg" alt="" srcset="">
+    </div>
+  </div>
+</mat-dialog-content> -->
+
+<mat-dialog-content class="mat-typography" style="display: flex;">
+  <div class="texto">
+    <div class="descricao">
+      <h2>Endereço</h2>
+      <h3><mat-icon>room</mat-icon>Rua Santa Luzia</h3>
+    </div>
+    <div class="descricao">
+      <h2>Melhor dia</h2>
+      <h3><mat-icon>calendar_today</mat-icon> Seg / Ter</h3>
+    </div>
+    <div class="descricao">
+      <h2>Melhor hora</h2>
+      <h3><mat-icon>query_builder</mat-icon>09:00h - 11:00h</h3>
+    </div>
+    <div class="descricao">
+      <h2>Material</h2>
+      <h3><mat-icon>turned_in</mat-icon>Plástico/Metal</h3>
+    </div>
+    <div class="descricao">
+      <h2>Total</h2>
+      <h3>10 kg</h3>
+    </div>
+    <div class="valor">
+      <h2>Valor</h2>
+      <h3>R$100,00</h3>
+    </div>
+  </div>
+  <div class="imagem2">
+    <img src="../../../assets/imagens/pawel-czerwinski-RkIsyD_AVvc-unsplash.jpg" alt="" srcset="">
+  </div>
 </mat-dialog-content>
 
 <mat-dialog-actions align="center">
-  <button mat-raised-button style="background-color: var(--custom-app-primary);" [mat-dialog-close]="true" (click)="onSubmit()">ACEITAR</button>
-  <button mat-raised-button style="background-color: var(--custom-app-primary);" [mat-dialog-close]="true" (click)="openDialog()">NEGOCIAR</button>
-  <button mat-raised-button mat-dialog-close>FECHAR</button>
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="onSubmit()">ACEITAR</button>
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="openDialog()">NEGOCIAR</button>
+  <!-- <button mat-raised-button mat-dialog-close>FECHAR</button> -->
 </mat-dialog-actions>
+
+
 

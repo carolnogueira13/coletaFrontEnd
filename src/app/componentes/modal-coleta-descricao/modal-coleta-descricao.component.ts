@@ -26,7 +26,7 @@ export class ModalColetaDescricaoComponent {
   //     result => this.onSucess(),
   //     error => this.onError());
   // }
-    this.snackBar.open('Coleta confirmada com sucesso', '', {duration: 3000})
+    this.snackBar.open('Coleta confirmada com sucesso', '', {duration: 2000})
   }
 
   // private onSucess(){

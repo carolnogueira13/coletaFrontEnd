@@ -1,10 +1,21 @@
-<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
-<h2 mat-dialog-title>Deseja negociar o que?</h2>
-<button mat-raised-button><mat-icon>send</mat-icon>NEGOCIAR VIA CHAT</button>
+<div class="titulo">
+  <h2 mat-dialog-title><mat-icon>text_snippet</mat-icon>Deseja negociar o que?</h2>
+  <button mat-raised-button class="botao2"><mat-icon>send</mat-icon>NEGOCIAR VIA CHAT</button>
+</div>
+
+
 <mat-dialog-content class="mat-typography">
-  <button mat-raised-button><mat-icon>attach_money</mat-icon>VALOR</button>
-  <button mat-raised-button><mat-icon>calendar_today</mat-icon>DATA</button>
-  <button mat-raised-button><mat-icon>query_builder</mat-icon>HORÁRIO</button>
+  <button mat-raised-button (click)=" onClickVersion1()"><mat-icon>attach_money</mat-icon>{{ (inputValue$ | async) || 'VALOR' }}</button>
+
+  <button mat-raised-button (click)=" onClickVersion2()"><mat-icon>calendar_today</mat-icon>
+    <ng-container *ngIf="(diasDaSemana$ | async) as diasDaSemana; else dataPlaceholder">
+      <ng-container *ngIf="diasDaSemana.length > 0; else dataPlaceholder">{{ diasDaSemana }}</ng-container>
+    </ng-container>
+    <ng-template #dataPlaceholder>DATA</ng-template>
+  </button>
+
+  <button mat-raised-button (click)=" onClickVersion3()"><mat-icon>query_builder</mat-icon>HORÁRIO</button>
+  
   <div>
     <label for="mensagem">Mensagem adicional:</label>
     <textarea id="mensagem" name="mensagem" rows="10" cols="50"> </textarea>
@@ -12,6 +23,6 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="center">
-  <button mat-raised-button style="background-color: var(--custom-app-primary);" [mat-dialog-close]="true" (click)="onSubmit()">ENVIAR<mat-icon>send</mat-icon></button>
-  <button mat-raised-button mat-dialog-close>FECHAR</button>
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="onSubmit()" (click)="limpar()">ENVIAR<mat-icon>send</mat-icon></button>
+  <button mat-raised-button mat-dialog-close (click)="limpar()">FECHAR</button>
 </mat-dialog-actions>

@@ -10,3 +10,47 @@
 .custom-modal-background {
   background-color: var(--custom-app-background);
 }
+
+.descricao {
+  display: flex;
+  border-bottom: solid #698F4E 1px;
+  color: #2B463C;
+  justify-content: space-between;
+  margin-top: 20px;
+
+}
+
+.valor {
+  display: inline-flex;
+  padding: 11px 31px 8px 40px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 70px;
+  border-radius: 0px 0px 32px 32px;
+  /* display: flex; */
+  background-color: #2B463C;
+  color: var(--custom-app-background);
+  /* justify-content: space-around;
+  padding-top: 10px; */
+}
+
+button {
+  color: var(--custom-app-background) !important;
+
+}
+
+img{
+  margin-left: 40px;
+  width: 400px;
+  border-bottom: solid #698F4E 4px;
+}
+
+.imagem2 img{
+  margin-top: 60px;
+}
+
+.botao{
+  color: var(--custom-app-background) !important;
+  background-color: var(--custom-app-primary);
+  padding: 11px 31px 8px 40px !important;
+}

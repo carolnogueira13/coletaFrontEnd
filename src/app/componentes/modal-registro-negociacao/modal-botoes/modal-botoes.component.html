@@ -1,0 +1,48 @@
+<mat-dialog-content class="mat-typography">
+  <ng-container *ngIf="data.showModalVersion === 'version1'">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Valor</mat-label>
+        <input matInput [(ngModel)]="inputValue" name="inputName" (input)="onInputChange()">
+      </mat-form-field>
+    </form>
+  </ng-container>
+
+  <ng-container *ngIf="data.showModalVersion === 'version2'">
+    <h2>Escolha o dia disponível</h2>
+    <!-- <button mat-raised-button *ngFor="let diaDaSemana of diasDaSemana" multiple>{{ diaDaSemana }}</button> -->
+    <mat-button-toggle-group name="diasDaSemana" multiple [(ngModel)]="diasDaSemana">
+      <mat-button-toggle value="Seg">SEG</mat-button-toggle>
+      <mat-button-toggle value="Ter">TER</mat-button-toggle>
+      <mat-button-toggle value="Qua">QUA</mat-button-toggle>
+      <mat-button-toggle value="Qui">QUI</mat-button-toggle>
+      <mat-button-toggle value="Sex">SEX</mat-button-toggle>
+      <mat-button-toggle value="Sab">SAB</mat-button-toggle>
+      <mat-button-toggle value="Dom">DOM</mat-button-toggle>
+    </mat-button-toggle-group>
+    <div>
+      Valores selecionados: {{diasDaSemana}}
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="data.showModalVersion === 'version3'">
+    <h2>Escolha o horário disponível</h2>
+    <div style="text-align: center;">
+      <mat-slider min="8" max="22" class="slider">
+        <input value="8" matSliderStartThumb [(value)]="valorSelecionado">
+        <input value="22" matSliderEndThumb [(value)]="valorSelecionado2">
+      </mat-slider>
+      <div>
+        <span>De: {{ valorSelecionado }}:00</span>
+      </div>
+      <div>
+        <span>Até: {{ valorSelecionado2 }}:00 </span>
+      </div>
+    </div>
+  </ng-container>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="enviarDatasSelecionadas()">OK</button>
+  <button mat-raised-button mat-dialog-close (click)="limpar()">LIMPAR</button>
+</mat-dialog-actions>
