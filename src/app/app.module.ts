@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalColetaDescricaoComponent } from './componentes/modal-coleta-descricao/modal-coleta-descricao.component';
 import { ModalRegistroNegociacaoComponent } from './componentes/modal-registro-negociacao/modal-registro-negociacao.component';
 import { ModalBotoesComponent } from './componentes/modal-registro-negociacao/modal-botoes/modal-botoes.component';
+import { DescarteMaterialService } from './servicos/descarte-material.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,10 +37,11 @@ import { ModalBotoesComponent } from './componentes/modal-registro-negociacao/mo
     MatIconModule,
     MatInputModule,
     MatSliderModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [DescarteMaterialService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

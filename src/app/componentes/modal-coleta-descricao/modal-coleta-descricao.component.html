@@ -18,7 +18,7 @@
   </div>
 </mat-dialog-content> -->
 
-<mat-dialog-content class="mat-typography" style="display: flex;">
+<!-- <mat-dialog-content class="mat-typography" style="display: flex;">
   <div class="texto">
     <div class="descricao">
       <h2>Endereço</h2>
@@ -49,6 +49,44 @@
     <img src="../../../assets/imagens/pawel-czerwinski-RkIsyD_AVvc-unsplash.jpg" alt="" srcset="">
   </div>
 </mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="onSubmit()">ACEITAR</button>
+  <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="openDialog()">NEGOCIAR</button>
+  <!-- <button mat-raised-button mat-dialog-close>FECHAR</button> -->
+<!-- </mat-dialog-actions> -->
+
+<mat-dialog-content class="mat-typography" style="display: flex;">
+  <div class="texto">
+    <div class="descricao">
+      <h2>Endereço</h2>
+      <h3><mat-icon>room</mat-icon>{{descarteMaterial.descarte.endereco}}</h3>
+    </div>
+    <div class="descricao">
+      <h2>Melhor dia</h2>
+      <h3><mat-icon>calendar_today</mat-icon> {{descarteMaterial.descarte.descarte_tempo_disponivel[0]}}</h3>
+    </div>
+    <div class="descricao">
+      <h2>Melhor hora</h2>
+      <h3><mat-icon>query_builder</mat-icon>{{descarteMaterial.descarte.descarte_tempo_disponivel[1]}}</h3>
+    </div>
+    <div class="descricao">
+      <h2>Material</h2>
+      <h3><mat-icon>turned_in</mat-icon>Plástico/Metal</h3>
+    </div>
+    <div class="descricao">
+      <h2>Total</h2>
+      <h3>{{descarteMaterial.material_quantidade}} kg</h3>
+    </div>
+    <div class="valor">
+      <h2>Valor</h2>
+      <h3>R${{descarteMaterial.material_preco}}</h3>
+    </div>
+  </div>
+  <div class="imagem2">
+    <img src="../../../assets/imagens/pawel-czerwinski-RkIsyD_AVvc-unsplash.jpg" alt="" srcset="">
+  </div>
+</mat-dialog-content> -->
 
 <mat-dialog-actions align="center">
   <button mat-raised-button class="botao" [mat-dialog-close]="true" (click)="onSubmit()">ACEITAR</button>

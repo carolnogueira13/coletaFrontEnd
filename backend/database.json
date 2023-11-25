@@ -1,0 +1,33 @@
+{
+  "descartes_material": [
+    {
+      "id": 1,
+      "material_quantidade": 10,
+      "material_status_coleta": 1,
+      "material_status": 1,
+      "material_preco": 100,
+      "material_coleta_id": 1,
+      "material_imposto": 1,
+      "descarte_id": 1,
+      "descarte": {
+        "descarte_id": 1,
+        "descarte_data": "23/11/2023",
+        "descarte_status": 1,
+        "descarte_tempo_disponivel": [
+          "Seg/Ter",
+          "09:00/11:00"
+        ],
+        "descartador_id": 12344,
+        "endereco": "Rua Santa Luzia"
+      },
+      "acordo_coleta_id": 121,
+      "acordo_coleta": {
+        "acordo_coleta_id": 121,
+        "acordo_coleta_data_solicitacao": "25/11/2023",
+        "acordo_coleta_data_coleta": "23/11/2023",
+        "acordo_coleta_status": 1,
+        "coletor_id": 45
+      }
+    }
+  ]
+}
