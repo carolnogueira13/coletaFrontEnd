@@ -40,6 +40,34 @@ export class DescarteMaterialService {
     .pipe(retry(1), catchError(this.errorHandl));
   }
 
+  // Mudar o preço
+  mudarValor(id, preco : number) : Observable<DescarteMaterial>{
+    return this.http
+    .patch<DescarteMaterial>(this.baseurl + '/descartes_material/' + id, {material_preco : preco}, this.httpOptions)
+    .pipe(retry(1), catchError(this.errorHandl));
+  }
+
+   // POST
+   createDescarteMaterial(data):Observable<DescarteMaterial>{
+    return this.http
+      .post<DescarteMaterial>(this.baseurl + '/descartes_material/', JSON.stringify(data),this.httpOptions)
+      .pipe(retry(1),catchError(this.errorHandl));
+  }
+
+  // UPDATE
+  updateDescarteMaterial(id, data): Observable<DescarteMaterial> {
+    return this.http
+      .put<DescarteMaterial>(this.baseurl + '/descartes_material/' + id, JSON.stringify(data), this.httpOptions)
+      .pipe(retry(1), catchError(this.errorHandl));
+  }
+
+  // DELETE
+  deleteDescarteMaterial(id) : Observable<DescarteMaterial>{
+    return this.http
+    .delete<DescarteMaterial>(this.baseurl + "/products/" + id)
+    .pipe(retry(1), catchError(this.errorHandl))
+  }
+
 
   errorHandl(error:any){
     let errorMessage = ''

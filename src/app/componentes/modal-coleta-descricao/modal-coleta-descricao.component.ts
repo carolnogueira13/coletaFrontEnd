@@ -25,32 +25,19 @@ export class ModalColetaDescricaoComponent {
     coletor_id : 45
   }
 
-  updateDescarteMaterialForm: FormGroup;
-
   constructor(private snackBar: MatSnackBar,
     public dialog: MatDialog,
     private descarteMaterialservico : DescarteMaterialService,
     public fb: FormBuilder){
-
-      this.descarteMaterialservico.getDescarteMaterial(this.id).subscribe((data)=>
-    this.updateDescarteMaterialForm = this.fb.group({
-      id : [data.id],
-      material_quantidade: [data.material_quantidade],
-      material_status_coleta : [data.material_status_coleta],
-      material_status : [data.material_status],
-      material_preco : [data.material_preco],
-      material_coleta_id : [data.material_coleta_id],
-      material_imposto : [data.material_imposto],
-      descarte_id : [data.descarte_id],
-      descarte : [data.descarte],
-      acordo_coleta_id : [data.acordo_coleta_id],
-      acordo_coleta : [data.acordo_coleta]
-    }))
-
     }
 
   openDialog() {
-    const dialogRef = this.dialog.open(ModalRegistroNegociacaoComponent);
+    this.descarteMaterialservico.getDescarteMaterial(this.id).subscribe((data)=>{
+      this.descarteMaterial = data
+    })
+    const dialogRef = this.dialog.open(ModalRegistroNegociacaoComponent, {
+      data: { descarteMaterial: this.descarteMaterial }
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
